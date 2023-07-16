@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { MapComponent } from './components/map/map.component';
+import { CountryInfoComponent } from './components/country-info/country-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MapComponent
+    MapComponent,
+    CountryInfoComponent
   ],
   imports: [
     BrowserModule
