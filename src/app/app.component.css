@@ -1,0 +1,6 @@
+.container {
+  max-width: calc(100% - 4rem);
+  display: grid;
+  grid-template-columns: 75% 25%;
+  gap: 2rem;
+}
