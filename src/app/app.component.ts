@@ -7,19 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'Interactive World Map';
-  paths: any;
 
   ngOnInit(): void {
     this.addEventsToPaths();
   }
 
   addEventsToPaths(): void {
-    this.paths = Array.from(document.querySelectorAll('path')).forEach((path) =>
+    Array.from(document.querySelectorAll('path')).forEach((path) =>
       path.addEventListener('click', this.fetchCountryData)
     );
   }
 
-  // Create service to fetch data
+  // @TODO: Create service to fetch data
   // This func will call this.service.fetchCountryData...etc
   fetchCountryData(e: MouseEvent) {
     console.log(e.target);
