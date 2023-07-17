@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'Interactive World Map';
+
+  fetchCountryData(e: MouseEvent) {
+    console.log(e.target);
+  }
 }
