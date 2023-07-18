@@ -6,15 +6,9 @@ import { MapComponent } from './components/map/map.component';
 import { CountryInfoComponent } from './components/country-info/country-info.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MapComponent,
-    CountryInfoComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent, MapComponent, CountryInfoComponent],
+  imports: [BrowserModule],
+  providers: [CountryInfoComponent],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
