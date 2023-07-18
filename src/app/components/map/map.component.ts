@@ -8,16 +8,10 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class MapComponent {
   @Output() countryClick = new EventEmitter();
 
-  ngOnInit(): void {
-    let paths = Array.from(document.querySelectorAll('path'));
-    paths.forEach((path) => {
-      path.addEventListener('click', (e: MouseEvent) => {
-        this.onClick(e);
-      });
-    });
-  }
-
   onClick(e: MouseEvent): void {
-    this.countryClick.emit(e);
+    const clickedElement = e.target as HTMLElement;
+    if (clickedElement.tagName === 'path') {
+      this.countryClick.emit(e);
+    }
   }
 }
