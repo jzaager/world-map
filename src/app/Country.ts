@@ -3,6 +3,6 @@ export interface Country {
   capital: string;
   region: string;
   incomeLevel: string;
-  population: number;
-  landArea: number;
+  latitude: string;
+  longitude: string;
 }
