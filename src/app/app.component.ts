@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +20,17 @@ export class AppComponent {
 
   // @TODO: Create service to fetch data
   // This func will call this.service.fetchCountryData...etc
-  fetchCountryData(e: MouseEvent) {
-    console.log(e.target);
+  async fetchCountryData(e: MouseEvent) {
+    let url = 'http://api.worldbank.org/v2/country/';
+    let requestFormat = '?format=json';
+    let elementId: string = (e.target as Element).id;
+    try {
+      let response = await fetch(`${url}${elementId}${requestFormat}`);
+      let results = await response.json();
+      let countryData = results[1][0];
+      console.log(countryData);
+    } catch (err) {
+      console.log(err);
+    }
   }
 }
