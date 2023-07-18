@@ -1,4 +1,4 @@
 <div class="container">
-  <app-map (countryClick)="getCountryData(getCountryName($event))"></app-map>
+  <app-map (pathClicked)="getCountryData(getCountryName($event))"></app-map>
   <app-country-info></app-country-info>
 </div>
