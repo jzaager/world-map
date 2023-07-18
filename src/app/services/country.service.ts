@@ -1,16 +1,26 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 import { Country } from '../Country';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CountryService {
+  private apiUrl: string = 'http://api.worldbank.org/v2/country/';
+
   name: string = '';
   capital: string = '';
   region: string = '';
   incomeLevel: string = '';
   latitude: string = '';
   longitude: string = '';
+
+  constructor(private http: HttpClient) {}
+
+  getCountryData(countryName: string): void {
+    console.log(countryName);
+  }
 
   async fetchCountryData(countryId: string): Promise<Country> {
     let url = 'http://api.worldbank.org/v2/country/';

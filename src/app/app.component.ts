@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { CountryInfoComponent } from './components/country-info/country-info.component';
 
-import { Country } from './Country';
-
 import { CountryService } from './services/country.service';
 
 @Component({
@@ -18,18 +16,13 @@ export class AppComponent {
     private countryComponent: CountryInfoComponent
   ) {}
 
+  getCountryData(countryName: string): void {
+    this.countryService.getCountryData(countryName);
+  }
+
   getCountryName(e: MouseEvent): string {
     let countryName = (e.target as Element).getAttribute('name');
-    return countryName || 'No name found';
-  }
-
-  async handleClick(e: MouseEvent) {
-    this.countryComponent.setCountry(await this.getCountry(e));
-  }
-
-  async getCountry(e: MouseEvent): Promise<Country> {
-    let elementId: string = (e.target as Element).id;
-    let country = await this.countryService.fetchCountryData(elementId);
-    return country;
+    //console.log(countryName);
+    return countryName ? countryName : 'No name provided';
   }
 }
