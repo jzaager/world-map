@@ -18,16 +18,9 @@ export class AppComponent {
     private countryComponent: CountryInfoComponent
   ) {}
 
-  ngOnInit(): void {
-    this.addEventsToPaths();
-  }
-
-  addEventsToPaths(): void {
-    Array.from(document.querySelectorAll('path')).forEach((path) =>
-      path.addEventListener('click', (e) => {
-        this.handleClick(e);
-      })
-    );
+  getCountryName(e: MouseEvent): string {
+    let countryName = (e.target as Element).getAttribute('name');
+    return countryName || 'No name found';
   }
 
   async handleClick(e: MouseEvent) {
