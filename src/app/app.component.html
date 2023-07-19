@@ -1,5 +1,5 @@
 <div class="container">
-  <app-map (pathClicked)="getCountryData(getCountryName($event))"></app-map>
+  <app-map (pathClicked)="getCountryData(getPathClicked($event))"></app-map>
   <app-country-info
     name="{{ responseData ? responseData.name : 'Click a country' }}"
     capital="Capital: {{ responseData ? responseData.capitalCity : '' }}"

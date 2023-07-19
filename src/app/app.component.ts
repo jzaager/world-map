@@ -13,15 +13,17 @@ export class AppComponent {
 
   constructor(private countryService: CountryService) {}
 
-  getCountryData(countryId: string): void {
-    this.countryService.getCountryData(countryId).subscribe({
+  getCountryData(element: Element): void {
+    this.countryService.getCountryData(element.id).subscribe({
       next: (response: any) => {
         let countryData;
         try {
           countryData = response[1][0];
         } catch (error) {
           console.error(
-            `Invalid ID requested. API call had no valid response to country code: ${countryId}`
+            `Invalid ID requested. API call had no valid response to country code: ${
+              element.id
+            } (${element.getAttribute('name')})`
           );
           return;
         }
@@ -34,8 +36,8 @@ export class AppComponent {
     });
   }
 
-  getCountryName(e: MouseEvent): string {
-    let countryId = (e.target as Element).id;
-    return countryId ? countryId : 'No name provided';
+  getPathClicked(e: MouseEvent): Element {
+    let pathClicked = e.target as Element;
+    return pathClicked;
   }
 }
