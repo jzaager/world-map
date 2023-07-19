@@ -12,6 +12,5 @@ export class CountryInfoComponent {
   @Input() incomeLevel!: string;
   @Input() latitude!: string;
   @Input() longitude!: string;
-
-  responseData: any;
+  @Input() countryClicked: boolean = false;
 }

@@ -13,7 +13,6 @@ export class CountryService {
 
   getCountryData(countryId: string): Observable<any> {
     let requestUrl = `${this.apiUrl}${countryId}${this.requestFormat}`;
-    let data = this.http.get(requestUrl);
-    return data;
+    return this.http.get<any>(requestUrl);
   }
 }

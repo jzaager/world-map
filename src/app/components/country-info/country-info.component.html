@@ -1,9 +1,8 @@
 <div class="infoContainer">
-  <p>Country Data</p>
-  <p>{{ name }}</p>
-  <p>{{ capital }}</p>
-  <p>{{ region }}</p>
-  <p>{{ incomeLevel }}</p>
-  <p>{{ latitude }}</p>
-  <p>{{ longitude }}</p>
+  <h2>{{ name }}</h2>
+  <p *ngIf="countryClicked">{{ capital }}</p>
+  <p *ngIf="countryClicked">{{ region }}</p>
+  <p *ngIf="countryClicked">{{ incomeLevel }}</p>
+  <p *ngIf="countryClicked">{{ latitude }}&deg;</p>
+  <p *ngIf="countryClicked">{{ longitude }}&deg;</p>
 </div>

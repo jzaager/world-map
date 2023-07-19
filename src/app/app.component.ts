@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { CountryService } from './services/country.service';
 
 @Component({
@@ -10,6 +9,7 @@ import { CountryService } from './services/country.service';
 export class AppComponent {
   title: string = 'Interactive World Map';
   responseData: any;
+  countryClicked: boolean = false;
 
   constructor(private countryService: CountryService) {}
 
@@ -18,6 +18,7 @@ export class AppComponent {
       next: (response: any) => {
         let countryData = response[1][0];
         this.responseData = countryData;
+        this.countryClicked = true;
       },
       error: (error: any) => {
         console.error(error);
