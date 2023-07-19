@@ -9,6 +9,7 @@ import { Country } from 'src/app/Country';
 })
 export class CountryInfoComponent {
   responseData: any;
+  country!: Country;
   countryName: string = '';
   capital: string = '';
   region: string = '';
@@ -16,33 +17,50 @@ export class CountryInfoComponent {
   latitude: string = '';
   longitude: string = '';
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor() {}
 
-  setClickedCountry(countryData: any): void {
-    console.log(this.responseData);
-    this.cdr.detectChanges();
-    console.log(this.responseData);
-
-    /* let country = {
-        name: countryData.name,
-        capital: countryData.capitalCity,
-        region: countryData.region.value,
-        incomeLevel: countryData.incomeLevel.value,
-        latitude: countryData.latitude,
-        longitude: countryData.longitude,
+  setClickedCountry(countryData: any): any {
+    let country = {
+      name: this.responseData.name,
+      capital: this.responseData.capitalCity,
+      region: this.responseData.region.value,
+      incomeLevel: this.responseData.incomeLevel.value,
+      latitude: this.responseData.latitude,
+      longitude: this.responseData.longitude,
     };
-    console.log(country);
+    this.country = country;
     this.updateUi(country);
-    return country; */
+    return country;
   }
 
-  updateUi(country: Country) {
-    this.countryName = country.name;
-    this.capital = country.capital;
-    this.region = country.region;
-    this.incomeLevel = country.incomeLevel;
-    this.latitude = country.latitude;
-    this.longitude = country.longitude;
-    console.log(this.countryName);
+  updateUi(country: any) {
+    let infoContainer = document.querySelector('.infoContainer');
+    let nameField = (document.createElement(
+      'p'
+    ).textContent = `${this.country.name}\n`);
+    let capitalField = (document.createElement(
+      'p'
+    ).textContent = `${this.country.capital}`);
+    let regionField = (document.createElement(
+      'p'
+    ).textContent = `${this.country.region}`);
+    let incomeLevelField = (document.createElement(
+      'p'
+    ).textContent = `${this.country.incomeLevel}`);
+    let latitudeField = (document.createElement(
+      'p'
+    ).textContent = `${this.country.latitude}`);
+    let longitudeField = (document.createElement(
+      'p'
+    ).textContent = `${this.country.longitude}`);
+
+    infoContainer?.append(
+      nameField,
+      capitalField,
+      regionField,
+      incomeLevelField,
+      latitudeField,
+      longitudeField
+    );
   }
 }
