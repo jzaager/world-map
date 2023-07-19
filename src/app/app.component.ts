@@ -16,7 +16,15 @@ export class AppComponent {
   getCountryData(countryId: string): void {
     this.countryService.getCountryData(countryId).subscribe({
       next: (response: any) => {
-        let countryData = response[1][0];
+        let countryData;
+        try {
+          countryData = response[1][0];
+        } catch (error) {
+          console.error(
+            `Invalid ID requested. API call had no valid response to country code: ${countryId}`
+          );
+          return;
+        }
         this.responseData = countryData;
         this.countryClicked = true;
       },
