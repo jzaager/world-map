@@ -16,13 +16,22 @@ export class AppComponent {
     private countryComponent: CountryInfoComponent
   ) {}
 
-  getCountryData(countryName: string): void {
-    this.countryService.getCountryData(countryName);
+  getCountryData(countryId: string): void {
+    this.countryService.getCountryData(countryId).subscribe({
+      next: (response: any) => {
+        // @TODO: Handle response
+        let countryData = response[1][0];
+        this.countryComponent.responseData = countryData;
+        this.countryComponent.setClickedCountry(countryData);
+      },
+      error: (error: any) => {
+        console.error(error);
+      },
+    });
   }
 
   getCountryName(e: MouseEvent): string {
-    let countryName = (e.target as Element).getAttribute('name');
-    //console.log(countryName);
-    return countryName ? countryName : 'No name provided';
+    let countryId = (e.target as Element).id;
+    return countryId ? countryId : 'No name provided';
   }
 }
