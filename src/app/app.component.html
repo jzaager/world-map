@@ -1,4 +1,12 @@
 <div class="container">
   <app-map (pathClicked)="getCountryData(getCountryName($event))"></app-map>
-  <app-country-info></app-country-info>
+  <app-country-info
+    *ngIf="responseData"
+    name="{{ responseData.name }}"
+    capital="Capital city: {{ responseData.capitalCity }}"
+    region="Region: {{ responseData.region.value }}"
+    incomeLevel="Income Level: {{ responseData.incomeLevel.value }}"
+    latitude="Latitude: {{ responseData.latitude }}"
+    longitude="Longitude: {{ responseData.longitude }}"
+  ></app-country-info>
 </div>

@@ -10,6 +10,7 @@ import { Country } from '../Country';
 export class CountryService {
   private apiUrl: string = 'http://api.worldbank.org/v2/country/';
   private requestFormat: string = '?format=json';
+  responseData: any;
 
   name: string = '';
   capital: string = '';

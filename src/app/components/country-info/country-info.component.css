@@ -1,3 +1,4 @@
-.container {
-  border: solid thin black;
+.infoContainer {
+  border: solid thin silver;
+  padding: 1rem;
 }

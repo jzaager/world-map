@@ -10,6 +10,7 @@ import { CountryService } from './services/country.service';
 })
 export class AppComponent {
   title: string = 'Interactive World Map';
+  responseData: any;
 
   constructor(
     private countryService: CountryService,
@@ -21,8 +22,11 @@ export class AppComponent {
       next: (response: any) => {
         // @TODO: Handle response
         let countryData = response[1][0];
+        this.responseData = countryData;
         this.countryComponent.responseData = countryData;
-        this.countryComponent.setClickedCountry(countryData);
+        console.log(this.countryComponent.responseData);
+        this.countryService.responseData = countryData;
+        // this.countryComponent.setClickedCountry(countryData);
       },
       error: (error: any) => {
         console.error(error);
