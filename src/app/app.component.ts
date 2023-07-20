@@ -28,26 +28,4 @@ export class AppComponent {
 
     this.countryClicked = true;
   }
-
-  /*   getCountryData(element: Element): void {
-    this.countryService.getCountryData(element.id).subscribe({
-      next: (response: any) => {
-        let countryData;
-        try {
-          countryData = response[1][0];
-        } catch (error) {
-          console.error(
-            `Invalid ID requested. API call had no valid response to country code: ${
-              element.id
-            } (${element.getAttribute('name')})`
-          );
-          return;
-        }
-        this.setCountryDetails(countryData);
-      },
-      error: (error: any) => {
-        console.error(error);
-      },
-    });
-  } */
 }
