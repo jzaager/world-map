@@ -19,8 +19,6 @@ export class AppComponent {
   constructor() {}
 
   setClickedCountry(countryData: any): void {
-    console.log(countryData);
-
     this.name = countryData.name;
     this.capital = countryData.capitalCity;
     this.region = countryData.region.value;
