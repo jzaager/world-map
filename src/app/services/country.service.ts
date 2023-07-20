@@ -11,6 +11,7 @@ export class CountryService {
 
   constructor(private http: HttpClient) {}
 
+  // Returns data from Worldbank API to MapComponent
   getCountryData(countryId: string): Observable<any> {
     let requestUrl = `${this.apiUrl}${countryId}${this.requestFormat}`;
     return this.http.get<any>(requestUrl);

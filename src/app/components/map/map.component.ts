@@ -12,14 +12,18 @@ export class MapComponent {
 
   constructor(private countryService: CountryService) {}
 
+  // Response to a country click on the SVG in the MapComponent
   onClick(e: MouseEvent): void {
     const clickedElement = e.target as HTMLElement;
     if (clickedElement.tagName === 'path') {
       let targetId = clickedElement.id;
 
+      // Calls the API service request to get data based on the ID of the target clicked
       this.countryService.getCountryData(targetId).subscribe((data: any) => {
         try {
           let responseData = data[1][0];
+
+          // Emits the data received to the parent AppComponent to be inserted into CountryComponent
           this.pathClicked.emit(responseData);
         } catch (error) {
           console.error(

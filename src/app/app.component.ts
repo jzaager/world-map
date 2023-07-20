@@ -16,8 +16,8 @@ export class AppComponent {
   longitude!: string;
   countryClicked: boolean = false;
 
-  constructor() {}
-
+  /*   Set local variables with the data from the country that was clicked
+  Local variables get passed into Country-Info-Component */
   setClickedCountry(countryData: any): void {
     this.name = countryData.name;
     this.capital = countryData.capitalCity;

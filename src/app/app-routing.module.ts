@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { MapComponent } from './components/map/map.component';
 
+// Assign map component to default URL
 const routes: Routes = [{ path: '', component: MapComponent }];
 
 @NgModule({
