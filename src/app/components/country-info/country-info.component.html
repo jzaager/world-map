@@ -1,8 +1,11 @@
 <div class="infoContainer">
+  <h2 *ngIf="!countryClicked">Click a country</h2>
   <h2>{{ name }}</h2>
-  <p *ngIf="countryClicked">{{ capital }}</p>
-  <p *ngIf="countryClicked">{{ region }}</p>
-  <p *ngIf="countryClicked">{{ incomeLevel }}</p>
-  <p *ngIf="countryClicked">{{ latitude }}&deg;</p>
-  <p *ngIf="countryClicked">{{ longitude }}&deg;</p>
+  <div *ngIf="countryClicked" class="countryClickedContainer">
+    <p>Capital City: {{ capital }}</p>
+    <p>Region: {{ region }}</p>
+    <p>Income Level: {{ incomeLevel }}</p>
+    <p>Latitude: {{ latitude }}&deg;</p>
+    <p>Longitude: {{ longitude }}&deg;</p>
+  </div>
 </div>

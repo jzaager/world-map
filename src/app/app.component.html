@@ -1,14 +1,12 @@
 <div class="container">
-  <app-map (pathClicked)="getCountryData(getPathClicked($event))"></app-map>
+  <app-map (pathClicked)="setClickedCountry($event)"></app-map>
   <app-country-info
-    name="{{ responseData ? responseData.name : 'Click a country' }}"
-    capital="Capital: {{ responseData ? responseData.capitalCity : '' }}"
-    region="Region: {{ responseData ? responseData.region.value : '' }}"
-    incomeLevel="Income Level: {{
-      responseData ? responseData.incomeLevel.value : ''
-    }}"
-    latitude="Latitude: {{ responseData ? responseData.latitude : '' }}"
-    longitude="Longitude: {{ responseData ? responseData.longitude : '' }}"
+    [name]="name"
+    [capital]="capital"
+    [region]="region"
+    [incomeLevel]="incomeLevel"
+    [latitude]="latitude"
+    [longitude]="longitude"
     [countryClicked]="countryClicked"
   ></app-country-info>
 </div>

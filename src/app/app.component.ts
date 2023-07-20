@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CountryService } from './services/country.service';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +7,31 @@ import { CountryService } from './services/country.service';
 })
 export class AppComponent {
   title: string = 'Interactive World Map';
-  responseData: any;
+
+  name!: string;
+  capital!: string;
+  region!: string;
+  incomeLevel!: string;
+  latitude!: string;
+  longitude!: string;
   countryClicked: boolean = false;
 
-  constructor(private countryService: CountryService) {}
+  constructor() {}
 
-  getCountryData(element: Element): void {
+  setClickedCountry(countryData: any): void {
+    console.log(countryData);
+
+    this.name = countryData.name;
+    this.capital = countryData.capitalCity;
+    this.region = countryData.region.value;
+    this.incomeLevel = countryData.incomeLevel.value;
+    this.latitude = countryData.latitude;
+    this.longitude = countryData.longitude;
+
+    this.countryClicked = true;
+  }
+
+  /*   getCountryData(element: Element): void {
     this.countryService.getCountryData(element.id).subscribe({
       next: (response: any) => {
         let countryData;
@@ -27,17 +45,11 @@ export class AppComponent {
           );
           return;
         }
-        this.responseData = countryData;
-        this.countryClicked = true;
+        this.setCountryDetails(countryData);
       },
       error: (error: any) => {
         console.error(error);
       },
     });
-  }
-
-  getPathClicked(e: MouseEvent): Element {
-    let pathClicked = e.target as Element;
-    return pathClicked;
-  }
+  } */
 }
