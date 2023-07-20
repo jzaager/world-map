@@ -8,19 +8,28 @@
 
 h1 {
   text-align: center;
+  margin-top: 1rem;
 }
 
 footer {
   width: 100%;
+  margin: 0 auto;
 
   min-height: 2rem;
 
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 5rem;
 
   position: fixed;
   bottom: 0px;
+}
+
+footer a {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .container {
@@ -28,5 +37,4 @@ footer {
   padding-block-start: 1rem;
   display: grid;
   grid-template-columns: 75% 25%;
-  gap: 2rem;
 }
