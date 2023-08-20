@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class CountryService {
-  private apiUrl: string = 'http://api.worldbank.org/v2/country/';
+  private apiUrl: string = 'https://api.worldbank.org/v2/country/';
   private requestFormat: string = '?format=json';
 
   constructor(private http: HttpClient) {}
