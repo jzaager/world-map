@@ -1,27 +1,35 @@
-# WorldMap
+# World Bank Data Retrieval Tool
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
+## Overview
 
-## Development server
+The World Bank Data Retrieval Tool is a web-based application developed to facilitate the retrieval and visualization of economic and geographical statistics for countries worldwide. This tool uses Angular, TypeScript, and HTTP requests to interact with the World Bank API while providing a user-friendly experience.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![Demo](https://github.com/jzaager/world-map/assets/94499968/43ec8ac1-d136-46bb-9cab-92a78fdb3831)
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **User-Friendly Interface:** A responsive and intuitive user interface built using custom-buiold Angular components, ensuring a smooth user experience and easily maintainable code.
 
-## Build
+- **Data Retrieval:** Accesses the World Bank API to retrieve specific country data based on user input.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Data Presentation:** Displays economic and geographical statistics for selected countries.
 
-## Running unit tests
+## Technologies Used
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Angular
+- TypeScript
+- Angular HTTP Client
+- World Bank API
 
-## Running end-to-end tests
+## Usage
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Click on a country to see its statistics!
 
-## Further help
+## License
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Acknowledgments
+
+- [World Bank API](https://data.worldbank.org/developers) for providing access to valuable economic and development data.
+- The Angular community for creating a powerful and flexible framework for building web applications.
