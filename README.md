@@ -4,6 +4,8 @@
 
 The World Bank Data Retrieval Tool is a web-based application developed to facilitate the retrieval and visualization of economic and geographical statistics for countries worldwide. This tool uses Angular, TypeScript, and HTTP requests to interact with the World Bank API while providing a user-friendly experience.
 
+[Live Version](https://jzaager.github.io/world-map/docs/)
+
 ![Demo](https://github.com/jzaager/world-map/assets/94499968/43ec8ac1-d136-46bb-9cab-92a78fdb3831)
 
 ## Features
